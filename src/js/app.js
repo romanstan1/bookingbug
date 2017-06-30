@@ -1,1 +1,2 @@
-console.log('JS loaded');
+angular
+  .module('bookingbug', ['ui.router']);

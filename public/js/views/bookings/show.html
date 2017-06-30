@@ -1,0 +1,15 @@
+
+<h1> {{ bookingsShow.companyName }}</h1>
+<ul class="services row">
+  <li ng-repeat="(key, value) in bookingsShow.services" class="col-sm-4">
+    <div>
+      <p> <span> Service Name: </span> {{ value.name }}</p>
+      <p> <span> Service Description: </span> {{ value.description }}</p>
+      <p> <span> Booking Type:  </span> {{ value.booking_type_public }}</p>
+      <p> <span> Prices:  </span> {{ value.prices[0] }}  {{ value.prices[1] }}  {{ value.prices[2] }}</p>
+      <p> <span> Spaces:  </span> {{ value.spaces }}</p>
+      <p> <a href="{{ value._links.book.href }}"> Click To Book </a></p>
+      <p> <a href="{{ value._links.questions.href }}"> Ask a Question </a></p>
+    </div>
+  </li>
+</ul>

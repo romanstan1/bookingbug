@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="bookingbug">
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <base href="/">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <meta name=viewport content="width=device-width, initial-scale=1" charset="utf-8">
-    <title>New Project</title>
+    <title>Bookingbug Code Test</title>
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
     <!-- inject:js -->
     <!-- endinject -->
     <!-- inject:css -->
     <!-- endinject -->
   </head>
-  <body>
-    Is this thing on?
+  <body ng-controller="MainCtrl as main">
+    <header>
+      <ul>
+        <li ui-sref="home"> Home </li>
+        <li ui-sref="bookingsIndex"> View Companies </li>
+      </ul>
+    </header>
+
+    <main ui-view class="container">
+    </main>
+
+    <footer>
+      <div>
+        Made with &hearts; by <a href="http://www.romanstan.xyz" target="_blank"> Roman </a>
+      </div>
+    </footer>
   </body>
 </html>

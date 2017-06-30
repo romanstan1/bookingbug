@@ -1,0 +1,7 @@
+<h1>Companies</h1>
+
+<div class="row">
+  <div ng-repeat="(company, id) in bookingsIndex.companies" class="col-sm-4">
+    <h4 ui-sref="bookingsShow({id: {{ id }}, name: company   })">{{ company }}</h4>
+  </div>
+</div>

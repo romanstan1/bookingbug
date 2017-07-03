@@ -21,6 +21,7 @@ describe('bookingsController', ()=>{
       $httpBackend.when('GET', 'js/views/home.html').respond(200);
       $httpBackend.when('GET', 'https://uk.bookingbug.com/api/v1/41285/services')
         .respond(200, {
+          total_entries: 1,
           _embedded: {
             services: [{
       				"id": 65607,
@@ -99,8 +100,15 @@ describe('bookingsController', ()=>{
       $httpBackend.flush();
       setTimeout(() => {
 
+        // This console.log should be logging 1 but I can't figure out why its not retrieving the elements from the DOM! 
+        console.log(angular.element(document.querySelectorAll('li')).length);
+
         expect(vm.services).to.be.an('array');
-        expect(vm.services.length).to.eq(1);
+        expect(vm.services.length).to.eq(1); // retuns one service
+        expect(vm.services[0].name).to.eq('Club Fitting');
+        expect(vm.services[0].description).to.eq("Improve your fairway and approach play with a custom set of club by incorporating our driver fitting technology and extensive knowledge of our staff.\r\n");
+        expect(vm.services[0].prices).to.be.an('array');
+        expect(vm.totalServices).to.eq(1);
         done();
       }, 250);
     });

@@ -15,7 +15,9 @@ function BookingbugService($http, Credentials) {
                 'App-Key':  '738e9aca62e7465446b7be8fe4219ffa'
               }
             }).then((response) => {
-              return response.data._embedded.services;
+          
+              // return response.data._embedded.services;
+              return response;
           });
   };
 }

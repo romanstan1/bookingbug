@@ -32,7 +32,8 @@ function BookingsShowCtrl(bookingbugService, $stateParams) {
 
   bookingbugService.getBookings($stateParams.id)
   .then((response) => {
-    vm.services = response;
+    vm.totalServices = response.data.total_entries;
+    vm.services = response.data._embedded.services;
   });
 
 }
